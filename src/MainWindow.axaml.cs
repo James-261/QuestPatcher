@@ -41,8 +41,8 @@ namespace QuestPatcher
 
         public MainWindow()
         {
-            DATA_PATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/QuestPatcher/";
-            TEMP_PATH = Path.GetTempPath() + "/QuestPatcher/";
+            DATA_PATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/Quatcher/";
+            TEMP_PATH = Path.GetTempPath() + "/Quatcher/";
 
             Directory.CreateDirectory(DATA_PATH);
 
@@ -53,7 +53,7 @@ namespace QuestPatcher
                 .WriteTo.TextWriter(new WindowLogger(this), LogEventLevel.Information, "{Message:lj}{NewLine}{Exception}")
                 .CreateLogger();
 
-            Logger.Verbose("QuestPatcher starting-------------------");
+            Logger.Verbose("Quatcher starting-------------------");
 
             this.DebugBridge = new DebugBridge(this);
             this.moddingHandler = new ModdingHandler(this);
@@ -159,7 +159,7 @@ namespace QuestPatcher
         private void onClose(object? sender, EventArgs args)
         {
             Directory.Delete(TEMP_PATH, true);
-            Logger.Verbose("QuestPatcher closing-------------------");
+            Logger.Verbose("Quatcher closing-------------------");
         }
 
         private async void onBrowseForModsClick(object? sender, RoutedEventArgs args) {
